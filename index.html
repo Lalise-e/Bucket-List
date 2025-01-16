@@ -8,5 +8,33 @@
         <title>Bucket List</title>
     </head>
     <body>
+        <form id="bucket-item">
+            <div class="bucket-item-field bucket-item-activity">
+                <label for="activity-input">Activity:</label>
+                <input type="text" name="activity-input" placeholder="Todo?">
+            </div>
+            <div class="bucket-item-field bucket-item-deadline">
+                <p>Deadline?</p>
+                <label for="radio-deadline-yes">Yes</label>
+                <input checked="true" type="radio" name="radio-deadline" id="radio-deadline-yes">
+                <label for="radio-deadline-no">No</label>
+                <input type="radio" name="radio-deadline" id="radio-deadline-no">
+            </div>
+            <div class="bucket-item-field bucket-item-date">
+                <label for="date">Expiry date:</label>
+                <input type="date" name="date">
+            </div>
+            <div class="bucket-item-field bucket-item-type">
+                <label>Activity type:</label>
+                <select name="type">
+                    <option>Voyage</option>
+                    <option>Food</option>
+                    <option>Adventure</option>
+                </select>
+            </div>
+            <button type="button" class="bucket-item-submit">Add Activity</button>
+        </form>
+        <ul id="activity-list">
+        </ul>
     </body>
 </html>
