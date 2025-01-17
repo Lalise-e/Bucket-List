@@ -21,11 +21,12 @@ const activityArr = [];
 function updateActivity(){
     const listElement = document.querySelector("#activity-list");
     listElement.innerHTML = "";
-    activityArr.forEach(e =>{
+    for(let i = 0; i < activityArr.length; i++){
         let listItem = document.createElement("li");
-        listItem.innerText = e;
+        listItem.index = i;
+        listItem.innerText = activityArr[i];
         listElement.appendChild(listItem);
-    })
+    }
 }
 
 //Adding events
