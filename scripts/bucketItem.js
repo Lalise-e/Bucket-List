@@ -1,15 +1,11 @@
 //Event functions
 function deadlineRadioNo(){
     let element = document.querySelector(".bucket-item-date");
-    if(element.classList.contains("hidden"))
-        return;
-    element.classList.add("hidden");
+    addClass(element, "hidden");
 }
 function deadlineRadioYes(){
     let element = document.querySelector(".bucket-item-date");
-    if(!element.classList.contains("hidden"))
-        return;
-    element.classList.remove('hidden');
+    removeClass(element, "hidden");
 }
 function itemSubmit(){
     activityArr.push(document.querySelector(".bucket-item-activity>input").value);
@@ -22,11 +18,15 @@ function updateActivity(){
     const listElement = document.querySelector("#activity-list");
     listElement.innerHTML = "";
     for(let i = 0; i < activityArr.length; i++){
-        let listItem = document.createElement("li");
-        listItem.index = i;
-        listItem.innerText = activityArr[i];
-        listElement.appendChild(listItem);
+function addClass(element, className){
+    if(element.classList.contains(className))
+        return;
+    element.classList.add(className);
     }
+function removeClass(element, className){
+    if(!element.classList.contains(className))
+        return;
+    element.classList.remove(className);
 }
 
 //Adding events
