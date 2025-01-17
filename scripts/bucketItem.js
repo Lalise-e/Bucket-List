@@ -41,7 +41,7 @@ function addClass(element, className){
     if(element.classList.contains(className))
         return;
     element.classList.add(className);
-    }
+}
 function removeClass(element, className){
     if(!element.classList.contains(className))
         return;
@@ -56,7 +56,5 @@ element = document.getElementById("radio-deadline-yes");
 element.checked = true;
 element.addEventListener("click", deadlineRadioYes);
 
-
-document.get
 element = document.getElementsByClassName("bucket-item-submit")[0];
 element.addEventListener("click", itemSubmit);
