@@ -10,6 +10,7 @@ function deadlineRadioYes(){
 function itemSubmit(){
     activityArr.push(document.querySelector(".bucket-item-activity>input").value);
     updateActivity();
+    clearForm();
 }
 function itemDelete(button){
     activityArr.splice(button.index, 1);
