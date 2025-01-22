@@ -47,6 +47,16 @@ function removeClass(element, className){
         return;
     element.classList.remove(className);
 }
+function clearForm(){
+    document.querySelector(".bucket-item-activity>input").value = "";
+    document.querySelector("#radio-deadline-yes").checked = true;
+    document.querySelector("#radio-deadline-no").checked = false;
+    document.querySelector("#date-select").value = new Date(Date.now).toDateString;
+    document.querySelector("#type-select").value = "Voyage";
+    removeClass(document.querySelector(".bucket-item-date"), "hidden");
+}
+
+clearForm();
 
 //Adding events
 let element = document.getElementById("radio-deadline-no");
