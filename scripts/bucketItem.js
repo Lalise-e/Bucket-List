@@ -38,11 +38,27 @@ function updateActivity(){
 }
 function createItem(index){
     const listItem = document.createElement("li");
+
+    const activity = document.createElement("p");
+    activity.innerText = activityArr[index].activity;
+
+    let date = document.createElement("p");
+    if(activityArr[index].deadline == false)
+        date.innerText = "Whenever you want!";
+    else
+        date.innerText = activityArr[index].date.toDateString();
+
+    let activityType = document.createElement("p");
+    activityType.innerText = activityArr[index].activityType;
+
     const button = document.createElement("button");
     button.index = index;
     button.addEventListener("click", () => itemDelete(button));
-    button.innerText = index;
-    listItem.innerText = activityArr[index];
+    button.innerText = "Complete!";
+
+    listItem.appendChild(activity);
+    listItem.appendChild(date);
+    listItem.appendChild(activityType);
     listItem.appendChild(button);
     return listItem;
 }
