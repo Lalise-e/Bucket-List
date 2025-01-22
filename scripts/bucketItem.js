@@ -8,7 +8,17 @@ function deadlineRadioYes(){
     removeClass(element, "hidden");
 }
 function itemSubmit(){
-    activityArr.push(document.querySelector(".bucket-item-activity>input").value);
+    const item = {
+        activity: document.querySelector(".bucket-item-activity>input").value,
+        deadline: document.querySelector("#radio-deadline-yes").checked,
+        date: new Date(document.querySelector("#date-select").value),
+        activityType: document.querySelector("#type-select").value
+    };
+    if(item.date == "Invalid Date" && item.deadline)
+        return;
+    if(item.activity === "")
+        return;
+    activityArr.push(item);
     updateActivity();
     clearForm();
 }
